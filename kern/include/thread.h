@@ -113,6 +113,7 @@ struct thread {
 	 * Public fields
 	 */
 	pid_t t_pid;
+	int termination_state;
 	/* add more here as needed */
 };
 

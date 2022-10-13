@@ -113,7 +113,19 @@ syscall(struct trapframe *tf)
 		case SYS_getpid:
 		err = sys_getpid(&retval);
 		break;
-		
+
+	    case SYS__exit:
+			err = sys__exit(tf->tf_a0);
+			break;
+
+		case SYS_write:
+			err = sys_write((userptr_t)tf->tf_a1, (int)tf->tf_a2, &retval);
+			break;
+			
+		case SYS_read:
+			err = sys_read((userptr_t)tf->tf_a1, (int)tf->tf_a2);
+			break;
+
 	    default:
 		kprintf("Unknown syscall %d\n", callno);
 		err = ENOSYS;

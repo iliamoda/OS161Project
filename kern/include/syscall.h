@@ -59,4 +59,20 @@ __DEAD void enter_new_process(int argc, userptr_t argv, userptr_t env,
 int sys_reboot(int code);
 int sys___time(userptr_t user_seconds, userptr_t user_nanoseconds);
 int sys_getpid(pid_t *retval);
+//void file_descriptor_cleanup(struct file_descriptor *fd);
+//int intialize_file_desc_tbl(struct file_descriptor *file_table[]);
+//int sys_open(userptr_t filename, int flags, int *return_val); 
+//int sys_close(int fd);
+//int sys_read(int fd, userptr_t buf, size_t buflen, int *return_value);
+//int sys_read(userptr_t buffer, int nbytes);
+//int sys_write(int fd, userptr_t buf, size_t nbytes, int *return_value);
+//int sys_write(userptr_t buffer, int nbytes, int *retval);
+//int dup2(int oldfd, int newfd, int *return_value);
+//int __getcwd(userptr_t buf, size_t buflen, int *return_value);
+//int chdir(userptr_t pathname);
+//int lseek(int fd, off_t pos, int32_t whence, int32_t *return_value1, int32_t *return_value2);
+int sys__exit(int termination_code);
+int sys_write(userptr_t buffer, int nbytes, int *retval);
+int sys_read(userptr_t buffer, int nbytes);
+
 #endif /* _SYSCALL_H_ */
